@@ -12,6 +12,14 @@ app.get('/', (_req, res) => {
   res.send('API is running....')
 })
 
+app.get('/books', (_req, res) => {
+  res.send('API is running....')
+})
+
+app.post('/books', (_req, res) => {
+  res.send('API is running....')
+})
+
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT} `)

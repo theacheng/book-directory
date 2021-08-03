@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import normalize from 'normalize-mongoose'
 import Authur from './authur_model.js'
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const bookSchema = mongoose.Schema(
   {
@@ -24,6 +25,7 @@ const bookSchema = mongoose.Schema(
 )
 
 bookSchema.plugin(normalize);
+bookSchema.plugin(mongoosePaginate);
 
 const Book = mongoose.model('Book', bookSchema);
 export default Book

@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './configs/db_config.js'
+import bookRouter from './routes/book_routes.js'
  
 dotenv.config()
 connectDB();
@@ -12,13 +13,7 @@ app.get('/', (_req, res) => {
   res.send('API is running....')
 })
 
-app.get('/books', (_req, res) => {
-  res.send('API is running....')
-})
-
-app.post('/books', (_req, res) => {
-  res.send('API is running....')
-})
+app.use('/books', bookRouter)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {

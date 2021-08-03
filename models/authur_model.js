@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import normalize from 'normalize-mongoose'
-import Book from './book_model.js'
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const authurSchema = mongoose.Schema(
   {
@@ -11,6 +11,7 @@ const authurSchema = mongoose.Schema(
 )
 
 authurSchema.plugin(normalize);
+authurSchema.plugin(mongoosePaginate);
 
 const Authur = mongoose.model('Authur', authurSchema);
 export default Authur
